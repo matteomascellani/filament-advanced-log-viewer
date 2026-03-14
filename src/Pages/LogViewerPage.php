@@ -3,6 +3,7 @@
 namespace H2bit\FilamentAdvancedLogViewer\Pages;
 
 use Filament\Pages\Page;
+use Filament\Support\Enums\Width;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
 
@@ -10,7 +11,7 @@ class LogViewerPage extends Page
 {
     protected string $view = 'filament-advanced-log-viewer::pages.log-viewer';
 
-    protected ?string $maxContentWidth = 'full';
+    protected Width | string | null $maxContentWidth = 'full';
 
     public ?string $selectedFile = null;
 
