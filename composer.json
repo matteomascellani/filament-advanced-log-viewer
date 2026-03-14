@@ -1,0 +1,25 @@
+{
+    "name": "matteomascellani/filament-advanced-log-viewer",
+    "description": "Advanced log viewer page plugin for Filament v3",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^3.2",
+        "illuminate/support": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "H2bit\\FilamentAdvancedLogViewer\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "H2bit\\FilamentAdvancedLogViewer\\FilamentAdvancedLogViewerServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
