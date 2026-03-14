@@ -88,7 +88,7 @@
             @else
                 @forelse ($fileGroups as $channel => $files)
                     @php
-                        $meta = $channelMeta[$channel] ?? ['icon' => 'heroicon-o-document', 'color' => 'text-gray-400'];
+                        $meta = $channelMeta[$channel] ?? ['icon' => 'heroicon-m-document-text', 'color' => 'text-gray-400'];
                         $hasSelected = collect($files)->contains($selectedFile);
                     @endphp
 
@@ -141,7 +141,7 @@
 
         @if (! $selectedFile)
             <div class="flex-1 flex flex-col items-center justify-center gap-2 text-gray-400 dark:text-gray-500">
-                <x-heroicon-o-document-text class="w-10 h-10 opacity-30"/>
+                <x-heroicon-m-document-text class="w-10 h-10 opacity-30"/>
                 <span class="text-sm">Seleziona un file di log</span>
             </div>
         @else

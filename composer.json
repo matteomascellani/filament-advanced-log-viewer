@@ -1,6 +1,6 @@
 {
     "name": "matteomascellani/filament-advanced-log-viewer",
-    "description": "Advanced log viewer page plugin for Filament v3",
+    "description": "Advanced log viewer page plugin for Filament v4",
     "type": "library",
     "license": "MIT",
     "require": {

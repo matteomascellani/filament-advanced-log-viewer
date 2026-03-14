@@ -1,6 +1,6 @@
 # h2bit/filament-advanced-log-viewer
 
-Advanced Filament v3 log viewer page with:
+Advanced Filament v4 log viewer page with:
 
 - sidebar grouped by channel
 - channel/date/size friendly list
@@ -59,5 +59,4 @@ php artisan vendor:publish --tag=filament-advanced-log-viewer-config
 - `navigation_group`, `navigation_label`, `navigation_icon`, `navigation_sort`
 - `slug`, `title`
 - `logs_glob`
-- `required_role`
 - `channel_meta`

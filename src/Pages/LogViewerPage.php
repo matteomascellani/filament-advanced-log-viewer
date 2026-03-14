@@ -42,7 +42,7 @@ class LogViewerPage extends Page
     {
         return app()->bound('filament-advanced-log-viewer.navigation-icon')
             ? (string) app('filament-advanced-log-viewer.navigation-icon')
-            : (string) config('filament-advanced-log-viewer.navigation_icon', 'heroicon-o-document-text');
+            : (string) config('filament-advanced-log-viewer.navigation_icon', 'heroicon-m-document-text');
     }
 
     public static function getNavigationSort(): ?int
