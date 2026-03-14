@@ -3,6 +3,7 @@
 namespace H2bit\FilamentAdvancedLogViewer\Pages;
 
 use Filament\Pages\Page;
+use Filament\Panel;
 use Filament\Support\Enums\Width;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
@@ -53,7 +54,7 @@ class LogViewerPage extends Page
             : (int) config('filament-advanced-log-viewer.navigation_sort', 97);
     }
 
-    public static function getSlug(): string
+    public static function getSlug(?Panel $panel = null): string
     {
         return (string) config('filament-advanced-log-viewer.slug', 'advanced-log-viewer');
     }
