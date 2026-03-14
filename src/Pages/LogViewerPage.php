@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\File;
 
 class LogViewerPage extends Page
 {
-    protected static string $view = 'filament-advanced-log-viewer::pages.log-viewer';
+    protected string $view = 'filament-advanced-log-viewer::pages.log-viewer';
 
     protected ?string $maxContentWidth = 'full';
 
