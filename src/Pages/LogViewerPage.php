@@ -3,7 +3,6 @@
 namespace H2bit\FilamentAdvancedLogViewer\Pages;
 
 use Filament\Pages\Page;
-use Filament\Panel;
 use Filament\Support\Enums\Width;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
@@ -12,7 +11,7 @@ class LogViewerPage extends Page
 {
     protected string $view = 'filament-advanced-log-viewer::pages.log-viewer';
 
-    protected Width | string | null $maxContentWidth = 'full';
+    protected Width|string|null $maxContentWidth = 'full';
 
     public ?string $selectedFile = null;
 
@@ -54,7 +53,7 @@ class LogViewerPage extends Page
             : (int) config('filament-advanced-log-viewer.navigation_sort', 97);
     }
 
-    public static function getSlug(?Panel $panel = null): string
+    public static function getSlug(?\Filament\Panel $panel = null): string
     {
         return (string) config('filament-advanced-log-viewer.slug', 'advanced-log-viewer');
     }
@@ -67,8 +66,14 @@ class LogViewerPage extends Page
     /** @return array<string, array<string>> grouped by channel name, files sorted newest first */
     public function getFileGroups(): array
     {
-        $pattern = (string) config('filament-advanced-log-viewer.logs_glob', storage_path('logs/*.log'));
-        $files = File::glob($pattern) ?: [];
+        $config  = config('filament-advanced-log-viewer.logs_glob', storage_path('logs/*.log'));
+        $patterns = is_array($config) ? $config : [$config];
+
+        $files = [];
+        foreach ($patterns as $pattern) {
+            $files = array_merge($files, File::glob($pattern) ?: []);
+        }
+        $files = array_unique($files);
 
         $groups = [];
         foreach ($files as $file) {
